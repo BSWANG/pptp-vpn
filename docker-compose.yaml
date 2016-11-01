@@ -1,8 +1,10 @@
 pptp-server:
-    image: registry.aliyuncs.com/wangbs/pptp-vpn
-    environment:
-        - USERNAME=username
-        - PASSWORD=password
-    ports:
-        - "1723:1723"
-    privileged: true
+  image: registry.aliyuncs.com/wangbs/pptp-vpn
+  environment:
+    - USERNAME=username
+    - PASSWORD=password
+  ports:
+    - "1723:1723"
+    - '53:53/udp'
+    - '53:53/tcp'
+  privileged: true

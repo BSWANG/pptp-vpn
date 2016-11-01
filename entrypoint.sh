@@ -5,6 +5,9 @@ set -e
 # start logging
 rsyslogd
 
+# start dnsmasq
+dnsmasq -r /etc/resolv.dnsmasq
+
 # enable IP forwarding
 sysctl -w net.ipv4.ip_forward=1
 
